@@ -1,15 +1,8 @@
-/**
- * File: 5-printf.c
- * Desc: Program that prints a specific string using printf
- */
-
 #include <stdio.h>
 
 /**
- * main - Entry point of the program.
- *
- * Description: Outputs a given string to the console.
- * Return: 0 upon successful completion.
+ * main - a program that prints a specific line of string
+ * Return: 0 (Success).
  */
 
 int main(void)
