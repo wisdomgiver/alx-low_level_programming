@@ -2,24 +2,17 @@
 /**
  * main - Program that prints the alphabet in lowercase, followed by a new line
  * Description: Program must use putchars only not printf, and a max of two
- * Return: 1 if successful
+ * Return: 0 if successful
  */
 int main(void)
 {
-	char letter;
-	char new_letter;
+        char letter;
 
-	printf("Enter letter: ");
-	scanf("%c", &letter);
+        for (letter = 'a'; letter <= 'z'; && letter++)
+        {
+                putchar(letter);
+        }
 
-	new_letter = letter;
-
-	if (letter >= 'A' && letter <= 'Z')
-	{
-		new_letter = letter - 'A' + 'a';
-	}
-
-	putchar(new_letter);
-	putchar('\n');
-	return (0);
+        putchar('\n');
+        return (0);
 }
