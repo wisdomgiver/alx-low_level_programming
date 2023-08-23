@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * _strncpy - Entry point
+ * @dest: main string
+ * @src: set for replacement
+ * @n: number of places
+ * Return: 0 if successful
+ */
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
