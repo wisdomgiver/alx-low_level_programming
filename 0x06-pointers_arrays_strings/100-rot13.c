@@ -1,11 +1,16 @@
 #include "main.h"
 
+/**
+ * rot13 - Entry point
+ * @s: character set
+ * Return; 0 if successful
+ */
 char *rot13(char *s)
 {
-	 int i = 0;
-	 char c;
+	int i = 0;
+	char c;
 
-	 for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		c = s[i];
 
@@ -21,5 +26,5 @@ char *rot13(char *s)
 			}
 		}
 	}
-	 return s;
+	return (s);
 }
