@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * leet - Entry point
+ * @str: sets of characters
+ * Return: 0 if successful
+ */
 char *leet(char *str)
 {
 	int i, j;
@@ -10,7 +15,7 @@ char *leet(char *str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
-		for ( j = 0; letters[j] != '\0'; j++)
+		for (j = 0; letters[j] != '\0'; j++)
 		{
 			if (str[i] == letters[j])
 			{
