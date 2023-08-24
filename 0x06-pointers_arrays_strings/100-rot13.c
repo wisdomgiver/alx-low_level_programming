@@ -1,30 +1,29 @@
 #include "main.h"
 
 /**
- * rot13 - Entry point
- * @s: character set
- * Return; 0 if successful
+ * rot13 - encodes a string in rot13
+ * @s: string to be encoded
+ *
+ * Return: the resulting string
  */
 char *rot13(char *s)
 {
-	int i = 0;
-	char c;
+	int i, j;
+
+	char a[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char b[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		c = s[i];
-
-		if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
+		for (j = 0; a[j] != '\0'; j++)
 		{
-			if ((c > 'M' && c <= 'Z') || (c > 'm' && c <= 'z'))
+			if (s[i] == a[j])
 			{
-				s[i] = c - 13;
-			}
-			else
-			{
-				s[i] = c + 13;
+				s[i] = b[j];
+				break;
 			}
 		}
 	}
+
 	return (s);
 }
