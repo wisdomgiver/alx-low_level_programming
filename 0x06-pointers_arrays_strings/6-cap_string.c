@@ -1,81 +1,34 @@
 #include "main.h"
 
 /**
- * is_alpha - Checks if a character is alphabetic
- * @c: The character to check
+ * cap_string - capitalizes everey word of a string
+ * @s: string to modify
  *
- * Return: true if c is an alphabetic character, false otherwise
+ * Return: the resulting string
  */
-int is_alpha(char c)
+char *cap_string(char *s)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
-}
+	int i, j;
 
-/**
- * capitalize - Capitalizes the first letter of every word in a string
- * @c: The string to capitalize
- *
- * Description: Words are delimited by spaces, tabs, or newlines.
- * Return:0 if successful
- */
-char capitalize(char c)
-{
-	if (c >= 'a' && c <= 'z')
+	char spe[13] = {' ', '\t', '\n', ',', ';', '.',
+		'!', '?', '"', '(', ')', '{', '}'};
+
+	for (i = 0; s[i] != '\0'; i++)
 	{
-		return (c - 'a' + 'A');
-	}
-	return (c);
-}
+		if (i == 0 && s[i] >= 'a' && s[i] <= 'z')
+			s[i] -= 32;
 
-/**
- * is_special_char - Entry point
- * @c: character
- * Return:0 if successful
- */
-int is_special_char(char c)
-{
-	int i;
-	int num_special_chars = 9;
-	char special_chars[] = ",;.!?(){}";
-
-	for (i = 0; i < num_special_chars; i++)
-	{
-		if (c == special_chars[i])
-			return (1);
-	}
-	return (0);
-}
-
-/**
- * cap_string - Entry point
- * @str: string of characters
- * Return:0 if successful
- */
-char *cap_string(char *str)
-{
-	char *original = str;
-	int i;
-	int new_word = 1;
-
-	for (i = 0; str[i] != '\0'; i++)
-	{
-		if (new_word && is_alpha(str[i]))
+		for (j = 0; j < 13; j++)
 		{
-			str[i] = capitalize(str[i]);
-			new_word = 0;
-		}
-		else if (is_special_char(str[i]))
-		{
-			new_word = 1;
-		}
-		else if (str[i] == ' ')
-		{
-			new_word = 1;
-		}
-		else
-		{
-			new_word = 0;
+			if (s[i] == spe[j])
+			{
+				if (s[i + 1] >= 'a' && s[i + 1] <= 'z')
+				{
+					s[i + 1] -= 32;
+				}
+			}
 		}
 	}
-	return (original);
+
+	return (s);
 }
