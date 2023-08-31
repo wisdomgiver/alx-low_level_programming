@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * _puts_recursion - Entry point
+ * @s:set of strings
+ */
 void _puts_recursion(char *s)
 {
 
